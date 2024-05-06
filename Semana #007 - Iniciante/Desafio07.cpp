@@ -12,7 +12,7 @@ Dado de 20 lados.*/
 #include <time.h>
 
 int main() {
-	int quant_lados, quant_dados, opcao, i, parada, moeda;
+	int quant_lados, quant_dados, i, moeda, parada;
 	do {
 		printf("\n\t\t MENU");
 		printf("\n1 - Moeda;");
@@ -39,30 +39,30 @@ int main() {
 				for (i = 0; i < quant_dados; i++) {
 					moeda = rand() % 2 + 1;
 					if(moeda == 1) {
-						printf("\n%d* sorteio: Cara", i+1);
+						printf("%d* sorteio: Cara\n", i+1);
 					} else if(moeda == 2) {
-						printf("\n%d* sorteio: Coroa", i+1);
+						printf("%d* sorteio: Coroa\n", i+1);
 					}
 				}
 				break;
 			case 6:
 				for (i = 0; i < quant_dados; i++) {
-					printf("\n%d* sorteio: %d ", i+1, rand() % quant_lados + 1);
+					printf("%d* sorteio: %d \n", i+1, rand() % quant_lados + 1);
 				}
 				break;
 			case 8:
 				for (i = 0; i < quant_dados; i++) {
-					printf("\n%d* sorteio: %d ", i+1, rand() % quant_lados + 1);
+					printf("%d* sorteio: %d \n", i+1, rand() % quant_lados + 1);
 				}
 				break;
 			case 12:
 				for (i = 0; i < quant_dados; i++) {
-					printf("\n%d* sorteio: %d ", i+1, rand() % quant_lados + 1);
+					printf("%d* sorteio: %d \n", i+1, rand() % quant_lados + 1);
 				}
 				break;
 			case 20:
 				for (i = 0; i < quant_dados; i++) {
-					printf("\n%d* sorteio: %d ", i+1, rand() % quant_lados + 1);
+					printf("%d* sorteio: %d \n", i+1, rand() % quant_lados + 1);
 				}
 				break;
 			default:
@@ -70,7 +70,7 @@ int main() {
 				break;
 		}
 
-		printf("\n\nDeseja continuar?(1 continua, 2 encerra): ");
+		printf("\nDeseja continuar?(1 continua, 2 encerra): ");
 		scanf("%d", &parada);
 	} while(parada != 2);
 	
