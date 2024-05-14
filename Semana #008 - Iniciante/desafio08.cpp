@@ -6,9 +6,8 @@ double preco, preco_final, desconto, juros;
 int opcao;
 
 int main() {
-	do {
-
-		printf("\n\t\t MENU\n");
+	while(1) {
+		printf("\n\t - MENU -\n");
 		printf("1. A vista em dinheiro ou Pix\n");
 		printf("2. A vista no cartao de credito\n");
 		printf("3. Parcelado em duas vezes\n");
@@ -18,8 +17,13 @@ int main() {
 		printf("Qual a forma de pagamento? ");
 		scanf("%d", &opcao);
 
+		if (opcao==5) {
+			printf("Encerrando programa...");
+			sleep(2);
+			break;
+		}
 		if (opcao!=1 && opcao!=2 && opcao!= 3 && opcao!=4 && opcao!=5) {
-			printf("ERRO, favor digitar uma opcao valida! \n");
+			printf("Erro, favor digitar uma opcao valida! \n");
 			printf("Reiniciando...\n");
 			sleep(1);
 			continue;
@@ -47,7 +51,7 @@ int main() {
 				break;
 			case 3:
 				preco_final = preco / 2;
-				printf("Voce devera pagar duas parcelas de R$ %.2lf, sem juros! \n", preco_final);
+				printf("Voce devera pagar duas parcelas de R$ %.2lf, totalizando R$ %.2lf, sem juros! \n", preco_final, preco);
 				sleep(2);
 				break;
 			case 4:
@@ -57,7 +61,6 @@ int main() {
 				sleep(2);
 				break;
 		}
-		printf("\n");
-	} while(opcao!=5);
+	}
 	return 0;
 }
