@@ -3,22 +3,28 @@
 
 int main() {
 	setlocale(LC_ALL, "");
-	int num, i, resultado = 0;
+	int num[20], i, resultado = 0, j, quant, k=0, primo[20];
 
-	printf("Digite um número: ");
-	scanf("%d", &num);
+	printf("========== NUMEROS PRIMOS ==========");
+	printf("\nInforme a quantidade de números que vai inserir: ");
+	scanf("%d", &quant);
 
-	for (i = 2; i <= num / 2; i++) {
-		if (num % i == 0) {
-			resultado++;
-			break;
+	for(j=1; j<=quant; j++) {
+		printf("Número para verificação: ");
+		scanf("%d", &num[j]);
+
+		for (i = 2; i <= num[j] / 2; i++) {
+			if (num[j] % i == 0) {
+				resultado++;
+				primo[k]=num[i];
+				k++;
+				break;
+			}
 		}
 	}
 
-	if (resultado == 0)
-		printf("%d é um número primo\n", num);
-	else
-		printf("%d não é um número primo\n", num);
-
+	if (resultado == 0) {
+		printf("Os numeros primos são: %d", primo[]);
+	}
 	return 0;
 }
